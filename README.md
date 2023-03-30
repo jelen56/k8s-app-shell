@@ -9,7 +9,7 @@
 ### usage:
 - postgresql:
   - `init`: `bash pgsql-install.sh init`
-  - `reset`: `bash pgsql-install.sh reset`,**NOTE**:`reset` means deleting the related datas and resource(such as services),Generally used when you want to reinstall postgresql
+  - `reset`: `bash pgsql-install.sh reset`,**NOTE**:`reset` means deleting the related datas and resource(such as services),Generally used when you want to reinstall postgresql,cri-dockerd
 
 - cri-dockerd:
   - `init`:`bash cri-dockerd-install.sh init`
