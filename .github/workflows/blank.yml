@@ -4,16 +4,17 @@ name: bugless-checker
 #
 # Documentation:
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
-# referenced from https://github.com/lework/kainstall/actions/runs/4550327818/workflow and https://docs.github.com/en/actions/examples/using-scripts-to-test-your-code-on-a-runner
+# referenced from https://github.com/github/super-linter and https://docs.github.com/en/actions/examples/using-scripts-to-test-your-code-on-a-runner
 #
 
 #############################
 # Start the job on all push #
 #############################
 on:
-  push:
-  pull_request:
-    branches: [master]
+  push: 
+    branches-ignore: [master, main]
+  pull_request: 
+    branches: [master, main]
     paths-ignore:
       - '**.README.md'
       - '**./.git/**'
@@ -39,7 +40,7 @@ jobs:
       # Checkout the code base #
       ##########################
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
@@ -50,7 +51,7 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: bugless-checker
-        uses: github/super-linter@v3.17.0
+        uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
           ERROR_ON_MISSING_EXEC_BIT: true
