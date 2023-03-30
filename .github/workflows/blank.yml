@@ -12,7 +12,14 @@ name: bugless-checker
 #############################
 on:
   push: 
-    branches-ignore: [master, main]
+    branches-ignore: [master, main]  
+    paths-ignore:
+      - '**.README.md'
+      - '**./.git/**'
+      - '**./.github/**'
+      - '**LICENSE'
+      - '**.blank.yml'
+      - '**.gitignore'    
   pull_request: 
     branches: [master, main]
     paths-ignore:
@@ -21,6 +28,7 @@ on:
       - '**./.github/**'
       - '**LICENSE'
       - '**.blank.yml'
+      - '**.gitignore'
 
 ###############
 # Set the Job #
