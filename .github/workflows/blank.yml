@@ -17,6 +17,7 @@ on:
     paths-ignore:
       - '**.README.md'
       - '**./.git/**'
+      - '**./.github/**'
       - '**LICENSE'
       - '**.blank.yml'
 
